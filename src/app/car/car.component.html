@@ -1,0 +1,28 @@
+<h4 *ngIf="cars; else: noCar">{{title}}</h4>
+<div class="mb-3">
+  <input
+    class="form-control"
+    id="carName"
+    placeholder="Arama metninizi giriniz"
+    [(ngModel)]="filterText"
+  >
+  <div id="emailHelp" class="form-text"></div>
+</div>
+
+<div class="row">
+  <ng-template #noCar>
+    <div class="alert alert-primary" role="alert">
+      Bu kategoride gösterilecek bir şey bulunamadı.
+    </div>
+  </ng-template>
+
+  <div *ngFor="let car of cars | carFilter:filterText" class="card" style="width: 18rem;">
+    <img class="card-img-top"  alt="..." [src]= "car.imageUrl"/>
+    <div class="card-body">
+      <h5 class="card-title">{{car.brandName}}</h5>
+      <p class="card-text">{{car.modelName}}</p>
+      <a (click)="addToCard(car)" class="btn btn-primary">Kirala</a>
+    </div>
+  </div>
+</div>
+

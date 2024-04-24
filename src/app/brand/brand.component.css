@@ -1,0 +1,4 @@
+.list-group-item.active {
+  background-color: #007bff; /* İstediğiniz renk */
+  color: white;
+}

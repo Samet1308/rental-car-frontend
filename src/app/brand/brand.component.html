@@ -1,0 +1,16 @@
+<h4>{{title}}</h4>
+
+<div class="list-group">
+  <a class="list-group-item active">Tüm Markalar</a>
+</div>
+
+<div class="list-group">
+  <button type="button"
+          class="list-group-item list-group-item-action"
+          *ngFor="let brand of brands; let i = index"
+          [class.active]="selectedBrandIndex === i"
+          (click)="selectBrand(i)">
+    {{ brand.name }}
+  </button>
+</div>
+
