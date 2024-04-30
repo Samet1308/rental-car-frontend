@@ -9,7 +9,8 @@
           class="list-group-item list-group-item-action"
           *ngFor="let brand of brands; let i = index"
           [class.active]="selectedBrandIndex === i"
-          (click)="selectBrand(i)">
+          (click)="selectBrand(i)"
+          routerLink="cars/brands/{{brand.id}}" >
     {{ brand.name }}
   </button>
 </div>
