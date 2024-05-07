@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Brand} from "./brand";
-import {BrandService} from "../services/brand.service";
+import {BrandService} from "../../services/brand.service";
 
 @Component({
   selector: 'app-brand',
