@@ -5,23 +5,29 @@
 
 <div style="background-color:#F8F8F8; min-height: 91vh;">
   <div style="padding-top: 10px">
-    <div style="margin-top:10px" class="child" *ngFor="let brand of brands">
+    <div style="margin-top:10px" class="child" *ngFor="let car of cars">
       <div nz-row>
         <div nz-col nzSpan="8">
           <img class="profile" style="height: 130px; width: 200px; border-radius: 10px;"
-               [src]="brand.processedImg" alt="profile"/>
+               [src]="car.processedImg" alt="profile"/>
         </div>
         <div nz-col nzSpan="16">
-          <h2 style="cursor:pointer; color:#108ee9" routerLink="/admin/{{brand.id}}/models">
-            {{brand.name}}</h2>
+          <h2 style="cursor:pointer; color:#108ee9" routerLink="/admin/{{car.id}}/cars">
+            {{car.modelName}}</h2>
           <hr>
-          <h5>Description:<b>{{brand.description}}</b></h5>
+          <h6>Model Yılı: <b>{{car.modelYear}}</b>
+            Renk: <b>{{car.color}}</b>
+            Yakıt Tipi: <b>{{car.type}}</b>
+
+          </h6>
+          <hr>
+          <h6>Fiyat: <b>{{car.dailyPrice}}</b> TL</h6>
           <hr>
           <div style="float:right">
             <button nzSize="small" nz-button nzType="primary"
-                    routerLink="/admin/{{brand.id}}/models">Model Detay</button>
+                    routerLink="">Güncelle</button>
             <button style="margin-left: 10px" nzSize="small" nz-button nzType="primary"
-                    routerLink="/admin/{{brand.id}}/model">Model Ekle</button>
+                    (click)="deleteCar(car.id)" nzDanger>Sil</button>
           </div>
         </div>
       </div>

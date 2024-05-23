@@ -1,3 +1,8 @@
+import { NZ_I18N } from 'ng-zorro-antd/i18n';
+import { en_US } from 'ng-zorro-antd/i18n';
+import { registerLocaleData } from '@angular/common';
+import en from '@angular/common/locales/en';
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -8,10 +13,6 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { LoginComponent } from './auth/components/login/login.component';
 import { SignupComponent } from './auth/components/signup/signup.component';
-import { NZ_I18N } from 'ng-zorro-antd/i18n';
-import { en_US } from 'ng-zorro-antd/i18n';
-import { registerLocaleData } from '@angular/common';
-import en from '@angular/common/locales/en';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NavComponent} from "./components/nav/nav.component";
 import {BrandComponent} from "./components/brand/brand.component";
@@ -24,6 +25,7 @@ import {NzButtonModule} from "ng-zorro-antd/button";
 import {NzSpinModule} from "ng-zorro-antd/spin";
 import {NzInputModule} from "ng-zorro-antd/input";
 import {NzMessageModule} from "ng-zorro-antd/message";
+
 
 registerLocaleData(en);
 

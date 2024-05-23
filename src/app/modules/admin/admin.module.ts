@@ -9,9 +9,10 @@ import {NzFormModule} from "ng-zorro-antd/form";
 import {NzGridModule} from "ng-zorro-antd/grid";
 import {NzInputModule} from "ng-zorro-antd/input";
 import {NzSpinModule} from "ng-zorro-antd/spin";
-import {NzTransitionPatchModule} from "ng-zorro-antd/core/transition-patch/transition-patch.module";
 import {NzWaveModule} from "ng-zorro-antd/core/wave";
 import {ReactiveFormsModule} from "@angular/forms";
+import {NzSelectModule} from "ng-zorro-antd/select";
+import {NzDatePickerModule} from "ng-zorro-antd/date-picker";
 
 
 @NgModule({
@@ -19,17 +20,18 @@ import {ReactiveFormsModule} from "@angular/forms";
     AdminDashboardComponent,
     PostCarComponent
   ],
-  imports: [
-    CommonModule,
-    AdminRoutingModule,
-    NzButtonModule,
-    NzFormModule,
-    NzGridModule,
-    NzInputModule,
-    NzSpinModule,
-    NzTransitionPatchModule,
-    NzWaveModule,
-    ReactiveFormsModule
-  ]
+    imports: [
+        CommonModule,
+        AdminRoutingModule,
+        NzButtonModule,
+        NzFormModule,
+        NzGridModule,
+        NzInputModule,
+        NzSpinModule,
+        NzWaveModule,
+        ReactiveFormsModule,
+        NzSelectModule,
+        NzDatePickerModule
+    ]
 })
 export class AdminModule { }
