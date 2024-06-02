@@ -45,7 +45,7 @@ export class SignupComponent {
     this.authService.register(this.signupForm.value).subscribe((res) =>{
       console.log(res)
       if(res.id != null){
-        this.message.success("Giriş Başarılı", {nzDuration:5000})
+        this.message.success("Kayıt Başarılı", {nzDuration:5000})
         this.router.navigateByUrl("/login")
       }
       else{

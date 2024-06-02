@@ -14,12 +14,12 @@
 <div *ngIf ="isAdminLoggedIn">
   <nz-header class="main-header" nz-row nzType="flex" class="custom-navbar">
     <div class="navbar-title">
-      <a routerLink="/login">LoggedIn Admin </a>
+      <a routerLink="/login">Kayra Car Rental</a>
     </div>
     <div class="nav-links">
-      <a nz-button nzType="link" routerLink="/admin/dashboard" routerLinkActive="active">Dashboard</a>
-      <a nz-button nzType="link" routerLink="/admin/add-car" routerLinkActive="active">Araba Ekle</a>
+      <a nz-button nzType="link" routerLink="/admin/dashboard" routerLinkActive="active">Ana Sayfa</a>
       <a nz-button nzType="link" routerLink="/admin/add-brand" routerLinkActive="active">Marka Ekle</a>
+      <a nz-button nzType="link" routerLink="/admin/bookings" routerLinkActive="active">Kiralamalar</a>
       <a nz-button nzType="link" (click)="logout()" routerLinkActive="active">Logout </a>
     </div>
   </nz-header>
@@ -28,11 +28,12 @@
 <div *ngIf ="isCustomerLoggedIn">
   <nz-header class="main-header" nz-row nzType="flex" class="custom-navbar">
     <div class="navbar-title">
-      <a routerLink="/login">LoggedIn Customer </a>
+      <a routerLink="/login">Kayra Car Rental</a>
     </div>
     <div class="nav-links">
-      <a nz-button nzType="link" routerLink="/customer/dashboard" routerLinkActive="active">Dashboard</a>
-      <a nz-button nzType="link" (click)="logout()"  routerLinkActive="active">Logout </a>
+      <a nz-button nzType="link" routerLink="/customer/dashboard" routerLinkActive="active">Ana Sayfa</a>
+      <a nz-button nzType="link" routerLink="/customer/bookings" routerLinkActive="active">Araçlarım  </a>
+      <a nz-button nzType="link" (click)="logout()"  routerLinkActive="active">Çıkış Yap </a>
     </div>
   </nz-header>
 </div>

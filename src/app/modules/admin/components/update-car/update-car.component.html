@@ -1,0 +1,102 @@
+<div style="margin-top:150px">
+  <nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip = "Working..">
+    <div class="parent">
+      <div class="child">
+        <div nz-row class="imgDiv">
+          <div nz-col nzSpan="24">
+            <h2 style="margin-left: auto">Araba Güncelle </h2>
+          </div>
+        </div>
+
+        <form nz-form [formGroup]="updateForm" >
+          <div nz-row>
+
+            <div class="file-upload-container">
+              <label class="file-upload-label">
+                <span style="margin-left: 100px">Select a File</span>
+                <input type="file" nz-button nzType="primary" accept="image/x-png, image/gif, image/jpeg" (change)="onFileSelected($event)" />
+              </label>
+              <div *ngIf="imagePreview" class="image-preview">
+                <div class="circle-image">
+                  <img [src]="imagePreview" alt="Existing Image" class="preview-image" /> </div>
+              </div>
+              <div *ngIf="existingImage" class="image-preview">
+                <div class="circle-image">
+                  <img [src]="existingImage" alt="Existing Image" class="preview-image" /> </div>
+              </div>
+            </div>
+
+
+
+
+            <div nz-col nzSpan="24">
+              <nz-form-item>
+                <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="Gerekli Alan">
+                  <input nz-input placeholder="İsim" formControlName="name">
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+
+            <div nz-col nzSpan="24">
+              <nz-form-item>
+                <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="Gerekli Alan">
+                  <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Renk" formControlName="color">
+                    <nz-option *ngFor="let color of listOfColor" nzLabel="{{color}}"
+                               nzValue="{{color}}">
+                    </nz-option>
+                  </nz-select>
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+
+            <div nz-col nzSpan="24">
+              <nz-form-item>
+                <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="Gerekli Alan">
+                  <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Yakıt Tipi" formControlName="type">
+                    <nz-option *ngFor="let type of listOfTypes" nzLabel="{{type}}"
+                               nzValue="{{type}}">
+                    </nz-option>
+                  </nz-select>
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+
+            <div nz-col nzSpan="24">
+              <nz-form-item>
+                <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="Gerekli Alan">
+                  <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Vites Tipi" formControlName="transmission">
+                    <nz-option *ngFor="let transmission of listOfTransmission" nzLabel="{{transmission}}"
+                               nzValue="{{transmission}}">
+                    </nz-option>
+                  </nz-select>
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+
+            <div nz-col nzSpan="24">
+              <nz-form-item>
+                <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="Gerekli Alan">
+                  <input nz-input placeholder="Fiyat" formControlName="dailyPrice">
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+
+            <div nz-col nzSpan="24">
+              <nz-form-item>
+                <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="Gerekli Alan">
+                  <input nz-input placeholder="Model Yılı" formControlName="modelYear">
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+
+          </div>
+          <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'" (click)="updateCar()">Güncelle</button>
+
+
+        </form>
+      </div>
+    </div>
+  </nz-spin>
+
+</div>
+

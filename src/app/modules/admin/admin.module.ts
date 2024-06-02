@@ -13,6 +13,7 @@ import {NzWaveModule} from "ng-zorro-antd/core/wave";
 import {ReactiveFormsModule} from "@angular/forms";
 import {NzSelectModule} from "ng-zorro-antd/select";
 import {NzDatePickerModule} from "ng-zorro-antd/date-picker";
+import {NzCardModule} from "ng-zorro-antd/card";
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import {NzDatePickerModule} from "ng-zorro-antd/date-picker";
         NzWaveModule,
         ReactiveFormsModule,
         NzSelectModule,
-        NzDatePickerModule
+        NzDatePickerModule,
+        NzCardModule,
     ]
 })
 export class AdminModule { }

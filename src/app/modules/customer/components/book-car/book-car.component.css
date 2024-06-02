@@ -1,0 +1,124 @@
+/* Genel stil */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #F8F8F8;
+  margin: 0;
+  padding: 0;
+}
+
+/* Konteyner stil */
+.container {
+  background-color: #F8F8F8;
+  min-height: 91vh;
+  padding: 20px;
+}
+
+/* İçerik */
+.child {
+  padding: 20px;
+  width: 780px;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 1px 1px 15px -7px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.row {
+  padding: 30px;
+  width: 780px;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+i {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+tr {
+  padding: 5px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+p {
+  margin-bottom: 0em;
+}
+
+hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+h2:hover {
+  text-decoration-line: underline;
+}
+
+h6 {
+  font-size: 14px;
+}
+
+/* Pagination */
+.pagination {
+  width: 780px;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 20px;
+  margin-top: 20px;
+}
+
+/* Form düzeni */
+.dashboard-filter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filter-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter-select-dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.nz-form-item {
+  margin-bottom: 5px;
+}
+
+.nz-form-label {
+  text-align: left;
+}
+
+.nz-date-picker {
+  width: 100%;
+}
+
+/* Buton stili */
+.filterBtn {
+  margin-top: 20px;
+  align-self: center;
+}
+
+.nz-spin {
+  margin-top: 50px;
+}

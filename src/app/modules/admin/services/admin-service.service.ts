@@ -77,6 +77,13 @@ export class AdminServiceService {
       })
   }
 
+  getCarsById(carId: number) : Observable<any> {
+    return  this.httpClient.get<[]>(BASIC_URL+`/api/inventory/car/${carId}`,
+      {
+        headers:this.createAuthorizationHeader()
+      })
+  }
+
   deleteModel(modelId:number): Observable<any> {
     return  this.httpClient.delete<[]>(BASIC_URL+`/api/inventory/model/${modelId}`,
       {
@@ -85,6 +92,20 @@ export class AdminServiceService {
   }
   deleteCar(carId:number): Observable<any> {
     return  this.httpClient.delete<[]>(BASIC_URL+`/api/inventory/car/${carId}`,
+      {
+        headers:this.createAuthorizationHeader()
+      })
+  }
+
+  updateCar(carId:number, carDto:any): Observable<any> {
+    return  this.httpClient.put<[]>(BASIC_URL+`/api/inventory/car/${carId}`, carDto,
+      {
+        headers:this.createAuthorizationHeader()
+      })
+  }
+
+  getBookings(): Observable<any> {
+    return  this.httpClient.get<[]>(BASIC_URL+"/api/inventory/car/bookings" ,
       {
         headers:this.createAuthorizationHeader()
       })

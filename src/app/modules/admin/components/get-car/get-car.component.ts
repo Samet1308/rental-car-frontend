@@ -7,6 +7,7 @@ import {NzMessageService} from "ng-zorro-antd/message";
 import {NzFormModule} from "ng-zorro-antd/form";
 import {NgForOf} from "@angular/common";
 import {NzInputModule} from "ng-zorro-antd/input";
+import {NzCardModule} from "ng-zorro-antd/card";
 
 @Component({
   selector: 'app-get-car',
@@ -17,7 +18,8 @@ import {NzInputModule} from "ng-zorro-antd/input";
     NzFormModule,
     RouterLink,
     NgForOf,
-    NzInputModule
+    NzInputModule,
+    NzCardModule
   ],
   templateUrl: './get-car.component.html',
   styleUrls: ['./get-car.component.css']

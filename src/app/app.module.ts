@@ -58,7 +58,10 @@ registerLocaleData(en);
 
   ],
   providers: [
-    { provide: NZ_I18N, useValue: en_US }
+    {provide: NZ_I18N, useValue: en_US}
+  ],
+  exports: [
+    BrandComponent
   ],
   bootstrap: [AppComponent]
 })

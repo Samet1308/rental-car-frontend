@@ -3,6 +3,7 @@
   <button nz-button [nzSize]="size" nzType="primary" style="margin-left: 15px;">Ara</button>
 </form>
 
+
 <div style="background-color:#F8F8F8; min-height: 91vh;">
   <div style="padding-top: 10px">
     <div style="margin-top:10px; background-color:#D1C1FF"  class="child" *ngFor="let car of cars">
@@ -18,14 +19,13 @@
           <h6>Model Yılı: <b>{{car.modelYear}}</b>
             Renk: <b>{{car.color}}</b>
             Yakıt Tipi: <b>{{car.type}}</b>
-
           </h6>
           <hr>
           <h6>Fiyat: <b>{{car.dailyPrice}}</b> TL</h6>
           <hr>
           <div style="float:right">
             <button nzSize="small" nz-button nzType="primary"
-                    routerLink="">Kirala</button>
+                    routerLink="/customer/book/{{car.id}}">Kirala</button>
           </div>
         </div>
       </div>

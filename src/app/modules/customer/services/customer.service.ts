@@ -5,6 +5,7 @@ import {StorageService} from "../../../auth/services/storage/storage.service";
 
 
 const BASIC_URL = ["http://localhost:8081"]
+const BASIC_URL2 = ["http://localhost:8082"]
 
 @Injectable({
   providedIn: 'root'
@@ -48,6 +49,28 @@ export class CustomerService {
         headers:this.createAuthorizationHeader()
       })
   }
+
+  getCarById(carId:number): Observable<any> {
+    return  this.httpClient.get<[]>(BASIC_URL+`/api/inventory/car/${carId}`,
+      {
+        headers:this.createAuthorizationHeader()
+      })
+  }
+
+  bookCar(bookCarDto:any): Observable<any> {
+    return  this.httpClient.post(BASIC_URL+"/api/inventory/car/book" , bookCarDto,
+      {
+        headers:this.createAuthorizationHeader()
+      })
+  }
+
+  getBookingsByUserId(): Observable<any> {
+    return  this.httpClient.get<[]>(BASIC_URL+"/api/inventory/car/bookings/"+ StorageService.getUserId(),
+      {
+        headers:this.createAuthorizationHeader()
+      })
+  }
+
 
 
   createAuthorizationHeader():HttpHeaders{

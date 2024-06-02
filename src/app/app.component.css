@@ -3,6 +3,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%; /* Ensures full width */
+  box-sizing: border-box;
 
   .navbar-title{
     >a{
@@ -17,6 +19,7 @@
   .nav-links{
     display: flex;
     align-items: center;
+    margin-right: 100px;
     a{
       color: white;
       margin-left: 35px;

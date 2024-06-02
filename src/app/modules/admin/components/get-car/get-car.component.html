@@ -1,36 +1,48 @@
-<form nz-form [formGroup]="validateForm" style="margin-top: 20px; text-align: center" (submit)="submitForm()">
-  <input nz-input placeholder="Arama" nzSize="large" style="width: 20%" formControlName="title"/>
-  <button nz-button [nzSize]="size" nzType="primary" style="margin-left: 15px;">Ara</button>
-</form>
 
-<div style="background-color:#F8F8F8; min-height: 91vh;">
-  <div style="padding-top: 10px">
-    <div style="margin-top:10px" class="child" *ngFor="let car of cars">
-      <div nz-row>
-        <div nz-col nzSpan="8">
-          <img class="profile" style="height: 130px; width: 200px; border-radius: 10px;"
-               [src]="car.processedImg" alt="profile"/>
-        </div>
-        <div nz-col nzSpan="16">
-          <h2 style="cursor:pointer; color:#108ee9" routerLink="/admin/{{car.id}}/cars">
-            {{car.modelName}}</h2>
-          <hr>
-          <h6>Model Yılı: <b>{{car.modelYear}}</b>
-            Renk: <b>{{car.color}}</b>
-            Yakıt Tipi: <b>{{car.type}}</b>
+<div class="row" style="margin-top: 20px;">
+  <div class="col-md-2 sidebar">
 
-          </h6>
-          <hr>
-          <h6>Fiyat: <b>{{car.dailyPrice}}</b> TL</h6>
-          <hr>
-          <div style="float:right">
-            <button nzSize="small" nz-button nzType="primary"
-                    routerLink="">Güncelle</button>
-            <button style="margin-left: 10px" nzSize="small" nz-button nzType="primary"
-                    (click)="deleteCar(car.id)" nzDanger>Sil</button>
-          </div>
-        </div>
+      <div class="sidebar-menu">
+       <a routerLink="/admin/dashboard">Anasayfa</a>
+        <br>
+        <a routerLink="/admin/add-brand">Marka Ekle</a>
+        <br>
+        <a routerLink="/logout">Çıkış Yap</a>
       </div>
+  </div>
+  <div class="col-md-10" style="background-color:#F8F8F8; min-height: 91vh;">
+    <form nz-form [formGroup]="validateForm" style="margin-top: 20px; text-align: center" (submit)="submitForm()">
+      <input nz-input placeholder="Arama" nzSize="large" style="width: 20%" formControlName="title"/>
+      <button nz-button [nzSize]="size" nzType="primary" style="margin-left: 30px;">Ara</button>
+    </form>
+    <div style="padding-top: 10px">
+      <nz-row [nzGutter]="16">
+        <nz-col *ngFor="let car of cars" nzSpan="8" style="margin-bottom: 16px;">
+          <nz-card nzHoverable class="custom-card">
+            <nz-row>
+              <nz-col nzSpan="24" style="text-align: center;">
+                <img class="profile" [src]="car.processedImg" alt="profile"/>
+              </nz-col>
+              <nz-col nzSpan="24">
+                <h2 style="cursor: pointer; color: #108ee9;" routerLink="/admin/{{car.id}}/cars">
+                  {{car.modelName}}
+                </h2>
+                <hr>
+                <h6>Model Yılı: <b>{{car.modelYear}}</b></h6>
+                <h6>Renk: <b>{{car.color}}</b></h6>
+                <h6>Yakıt Tipi: <b>{{car.type}}</b></h6>
+                <hr>
+                <h6>Fiyat: <b>{{car.dailyPrice}}</b> TL</h6>
+                <hr>
+                <div style="text-align: right;">
+                  <button nzSize="small" nz-button nzType="primary" routerLink="/admin/car/{{car.id}}">Güncelle</button>
+                  <button style="margin-left: 10px" nzSize="small" nz-button nzType="primary" (click)="deleteCar(car.id)" nzDanger>Sil</button>
+                </div>
+              </nz-col>
+            </nz-row>
+          </nz-card>
+        </nz-col>
+      </nz-row>
     </div>
   </div>
 </div>

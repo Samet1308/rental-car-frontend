@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {NzButtonSize} from "ng-zorro-antd/button";
 import {AdminServiceService} from "../../services/admin-service.service";
@@ -8,7 +8,7 @@ import {AdminServiceService} from "../../services/admin-service.service";
   templateUrl: './admin-dashboard.component.html',
   styleUrls: ['./admin-dashboard.component.css']
 })
-export class AdminDashboardComponent {
+export class AdminDashboardComponent implements OnInit{
   brands: any=[];
   validateForm! : FormGroup;
   size: NzButtonSize = 'large';
