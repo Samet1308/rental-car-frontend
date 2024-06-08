@@ -14,11 +14,6 @@ import {HttpClientModule} from "@angular/common/http";
 import { LoginComponent } from './auth/components/login/login.component';
 import { SignupComponent } from './auth/components/signup/signup.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {NavComponent} from "./components/nav/nav.component";
-import {BrandComponent} from "./components/brand/brand.component";
-import {CarComponent} from "./components/car/car.component";
-import {ModelComponent} from "./components/model/model.component";
-import {CarFilterPipe} from "./components/car/car-filter.pipe";
 import {NzLayoutModule} from "ng-zorro-antd/layout";
 import {NzFormModule} from "ng-zorro-antd/form";
 import {NzButtonModule} from "ng-zorro-antd/button";
@@ -32,11 +27,6 @@ registerLocaleData(en);
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent,
-    BrandComponent,
-    CarComponent,
-    ModelComponent,
-    CarFilterPipe,
     LoginComponent,
     SignupComponent,
 
@@ -61,7 +51,6 @@ registerLocaleData(en);
     {provide: NZ_I18N, useValue: en_US}
   ],
   exports: [
-    BrandComponent
   ],
   bootstrap: [AppComponent]
 })

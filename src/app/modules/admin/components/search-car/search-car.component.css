@@ -1,0 +1,54 @@
+.inner-content {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.filter-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.filter-select-dropdown {
+  flex: 1 1 200px;
+  min-width: 200px;
+}
+
+.filter-fields-width nz-form-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-fields-width nz-form-label {
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+.filter-fields-width nz-form-control {
+  width: 100%;
+}
+
+.filterBtn {
+  width: 100%;
+  padding: 10px 0;
+  background-color: #1890ff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.filterBtn:hover {
+  background-color: #40a9ff;
+}

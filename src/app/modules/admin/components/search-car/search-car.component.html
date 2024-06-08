@@ -1,0 +1,67 @@
+
+<div class="inner-content">
+  <nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Working...">
+    <div class="dashboard-filter">
+        <div class="filter-grid" [formGroup]="searchCarForm">
+          <div class="filter-select-dropdown filter-fields-width">
+
+            <nz-form-item>
+              <nz-form-label nzFor="gender">Marka</nz-form-label>
+              <nz-form-control nzErrorTip="This Input Is Required!">
+                <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a Marka" formControlName="brand">
+                  <nz-option *ngFor="let brand of listOfBrand" [nzLabel]="brand.name" [nzValue]="brand.id">>
+
+                  </nz-option>
+                </nz-select>
+              </nz-form-control>
+            </nz-form-item>
+
+            <nz-form-item>
+              <nz-form-label nzFor="gender">Model</nz-form-label>
+              <nz-form-control nzErrorTip="This Input Is Required!">
+                <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a Model" formControlName="model">
+                  <nz-option *ngFor="let model of listOfModel" [nzLabel]="model.name" [nzValue]="model.id">>
+
+                  </nz-option>
+                </nz-select>
+              </nz-form-control>
+            </nz-form-item>
+
+            <nz-form-item>
+              <nz-form-label nzFor="studentClass">Type</nz-form-label>
+              <nz-form-control nzErrorTip="This Input Is Required!">
+                <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a Type" formControlName="type"> <nz-option
+                  *ngFor="let type of listOfTypes" nzLabel={{type}}
+                  nzValue={{type}}></nz-option>
+                </nz-select> </nz-form-control>
+            </nz-form-item>
+
+
+            <nz-form-item>
+              <nz-form-label nzFor="gender">Color</nz-form-label>
+              <nz-form-control nzErrorTip="This Input Is Required!">
+                <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a Color" formControlName="color"> <nz-option
+                  *ngFor="let color of listOfColor" nzLabel={{color}}
+                  nzValue={{color}}></nz-option>
+                </nz-select>
+              </nz-form-control>
+            </nz-form-item>
+
+
+            <nz-form-item>
+              <nz-form-label nzFor="studentClass">Transmission</nz-form-label>
+              <nz-form-control nzErrorTip="This Input Is Required!">
+                <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a Transmission" formControlName="transmission"> <nz-option
+                  *ngFor="let transmission of listOfTransmission" nzLabel={{transmission}}
+                  nzValue={{transmission}}></nz-option>
+                </nz-select>
+              </nz-form-control>
+            </nz-form-item>
+         </div>
+          <div class="filter-select-dropdown filter-fields-width">
+              <button class="filterBtn" nz-button nzType="primary" (click)="searchCar()">Araç Ara</button>
+          </div>
+      </div>
+    </div>
+    </nz-spin>
+</div>

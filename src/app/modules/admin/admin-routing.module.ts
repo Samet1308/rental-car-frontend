@@ -8,6 +8,7 @@ import {GetModelComponent} from "./components/get-model/get-model.component";
 import {GetCarComponent} from "./components/get-car/get-car.component";
 import {UpdateCarComponent} from "./components/update-car/update-car.component";
 import {AdminGetBookingsComponent} from "./components/admin-get-bookings/admin-get-bookings.component";
+import {SearchCarComponent} from "./components/search-car/search-car.component";
 
 const routes: Routes = [
   {path:"dashboard", component: AdminDashboardComponent},
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: ":modelId/cars", component:GetCarComponent},
   {path: "car/:carId", component:UpdateCarComponent},
   {path: "bookings", component:AdminGetBookingsComponent},
+  {path: "search", component:SearchCarComponent},
 
 ];
 

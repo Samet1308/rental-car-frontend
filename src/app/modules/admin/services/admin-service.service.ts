@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {StorageService} from "../../../auth/services/storage/storage.service";
 import {Observable} from "rxjs";
+import {Model} from "../../../classes/model";
+import {Brand} from "../../../classes/brand";
 
 const BASIC_URL = ["http://localhost:8081"]
 const headers = new HttpHeaders({'Content-Type':'application/json; charset=utf-8'});
@@ -36,8 +38,14 @@ export class AdminServiceService {
         headers:this.createAuthorizationHeader()
       })
   }
-  getAllBrands(): Observable<any> {
-    return  this.httpClient.get<[]>(BASIC_URL+"/api/inventory/brands",
+  getAllBrands(): Observable<Brand[]> {
+    return  this.httpClient.get<Brand[]>(BASIC_URL+"/api/inventory/brands",
+      {
+        headers:this.createAuthorizationHeader()
+      })
+  }
+  getAllModels(): Observable<Model[]> {
+    return  this.httpClient.get<Model[]>(BASIC_URL+"/api/inventory/models",
       {
         headers:this.createAuthorizationHeader()
       })
@@ -50,7 +58,7 @@ export class AdminServiceService {
   }
 
   getModelsByBrand(branId:number): Observable<any> {
-    return  this.httpClient.get<[]>(BASIC_URL+`/api/inventory/${branId}/models`,
+    return  this.httpClient.get<[Model[]]>(BASIC_URL+`/api/inventory/${branId}/models`,
       {
         headers:this.createAuthorizationHeader()
       })
@@ -106,6 +114,12 @@ export class AdminServiceService {
 
   getBookings(): Observable<any> {
     return  this.httpClient.get<[]>(BASIC_URL+"/api/inventory/car/bookings" ,
+      {
+        headers:this.createAuthorizationHeader()
+      })
+  }
+  changeBookingStatus(bookingId: number, status: string){
+    return  this.httpClient.get<[]>(BASIC_URL+`/api/inventory/car/booking/${bookingId}/${status}`,
       {
         headers:this.createAuthorizationHeader()
       })

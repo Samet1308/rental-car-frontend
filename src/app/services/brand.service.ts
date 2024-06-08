@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Brand} from "../components/brand/brand";
+import {Brand} from "../classes/brand/brand";
 
 @Injectable()
 export class BrandService {
