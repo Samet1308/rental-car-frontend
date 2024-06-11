@@ -20,6 +20,7 @@ import {NzButtonModule} from "ng-zorro-antd/button";
 import {NzSpinModule} from "ng-zorro-antd/spin";
 import {NzInputModule} from "ng-zorro-antd/input";
 import {NzMessageModule} from "ng-zorro-antd/message";
+import {NzCardModule} from "ng-zorro-antd/card";
 
 
 registerLocaleData(en);
@@ -44,7 +45,8 @@ registerLocaleData(en);
     NzSpinModule,
     NzInputModule,
     ReactiveFormsModule,
-    NzMessageModule
+    NzMessageModule,
+    NzCardModule
 
   ],
   providers: [

@@ -3,7 +3,7 @@
   <button nz-button [nzSize]="size" nzType="primary" style="margin-left: 15px;">Ara</button>
 </form>
 
-<div style="background-color:#F8F8F8; min-height: 91vh;">
+<div style="min-height: 91vh;">
   <div style="padding-top: 10px">
     <div style="margin-top:10px" class="child" *ngFor="let model of models">
       <div nz-row>
@@ -12,10 +12,10 @@
                [src]="model.processedImg" alt="profile"/>
         </div>
         <div nz-col nzSpan="16">
-          <h2 style="cursor:pointer; color:#108ee9" routerLink="/customer/{{model.id}}/models">
+          <h2 style="cursor:pointer; color:#108ee9" routerLink="/customer/{{model.id}}/cars">
             {{model.name}}</h2>
           <hr>
-          <h5>Description:<b>{{model.description}}</b></h5>
+          <h5>Açıklama:<b> {{model.name}}</b></h5>
           <hr>
           <div style="float:right">
             <button nzSize="small" nz-button nzType="primary"

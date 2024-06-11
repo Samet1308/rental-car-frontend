@@ -3,7 +3,7 @@
   <button nz-button [nzSize]="size" nzType="primary" style="margin-left: 15px;">Ara</button>
 </form>
 
-<div style="background-color:#F8F8F8; min-height: 91vh;">
+<div style=" min-height: 91vh;">
   <div style="padding-top: 10px">
     <div style="margin-top:10px" class="child" *ngFor="let brand of brands">
       <div nz-row>
@@ -15,7 +15,7 @@
           <h2 style="cursor:pointer; color:#108ee9" routerLink="/customer/{{brand.id}}/models">
             {{brand.name}}</h2>
           <hr>
-          <h5>Description:<b>{{brand.description}}</b></h5>
+          <h5>Açıklama:<b> {{brand.name}}</b></h5>
           <hr>
           <div style="float:right">
             <button nzSize="small" nz-button nzType="primary"

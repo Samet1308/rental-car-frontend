@@ -3,19 +3,21 @@
       <nz-table #basicTable [nzData]="bookings" [nzPageSize]="20" [nzShowPagination]="'false'">
         <thead>
           <tr>
-            <th style="font-weight: bolder; color: #003973; ">From</th>
-             <th style="font-weight: bolder; color: #003973;">To</th>
-             <th style="font-weight: bolder; color: #003973; ">Days</th>
-             <th style="font-weight: bolder; color:#003973; ">Price</th>
-            <th style="font-weight: bolder; color: #003973; ">Status</th>
+            <th style="font-weight: bolder; color: #003973; ">Başlangıç</th>
+             <th style="font-weight: bolder; color: #003973;">Bitiş</th>
+            <th style="font-weight: bolder; color: #003973; ">Araç İsmi</th>
+             <th style="font-weight: bolder; color: #003973; ">Gün Sayısı</th>
+             <th style="font-weight: bolder; color:#003973; ">Fiyat</th>
+            <th style="font-weight: bolder; color: #003973; ">Durum</th>
           </tr>
         </thead>
         <tbody>
             <tr *ngFor="let booking of basicTable.data">
                 <td>{{booking.fromDate | date : 'MMM d, y'}}</td>
                 <td>{{booking.toDate | date: 'MMM d, y'}}</td>
+                <td>{{booking.carName}}</td>
                 <td>{{booking.days}}</td>
-                <td>{{booking.price}}</td>
+                <td>{{booking.price}} TL</td>
                 <td>
                   <strong
                     [ngStyle]="{'color': booking.bookCarStatus === 'APPROVED' ? 'green' : booking.bookCarStatus === 'REJECTED' ? 'blue' : 'red'}">

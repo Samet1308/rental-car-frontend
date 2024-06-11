@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Observable} from "rxjs";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {StorageService} from "../../../auth/services/storage/storage.service";
+import {Model} from "../../../classes/model";
 
 
 const BASIC_URL = ["http://localhost:8081"]
@@ -66,6 +67,18 @@ export class CustomerService {
 
   getBookingsByUserId(): Observable<any> {
     return  this.httpClient.get<[]>(BASIC_URL+"/api/inventory/car/bookings/"+ StorageService.getUserId(),
+      {
+        headers:this.createAuthorizationHeader()
+      })
+  }
+  searchCar(searchCarDto:any): Observable<any>{
+    return this.httpClient.post(BASIC_URL + "/api/inventory/car/search", searchCarDto,
+      {
+        headers:this.createAuthorizationHeader()
+      })
+  }
+  getAllModels(): Observable<Model[]> {
+    return  this.httpClient.get<Model[]>(BASIC_URL+"/api/inventory/models",
       {
         headers:this.createAuthorizationHeader()
       })

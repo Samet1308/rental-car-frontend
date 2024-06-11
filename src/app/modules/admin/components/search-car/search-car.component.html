@@ -5,63 +5,80 @@
         <div class="filter-grid" [formGroup]="searchCarForm">
           <div class="filter-select-dropdown filter-fields-width">
 
-            <nz-form-item>
-              <nz-form-label nzFor="gender">Marka</nz-form-label>
-              <nz-form-control nzErrorTip="This Input Is Required!">
-                <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a Marka" formControlName="brand">
-                  <nz-option *ngFor="let brand of listOfBrand" [nzLabel]="brand.name" [nzValue]="brand.id">>
+<!--            <nz-form-item>-->
+<!--              <nz-form-label nzFor="brand" style="color: #f0f0f0;">Marka</nz-form-label>-->
+<!--              <nz-form-control nzErrorTip="This Input Is Required!">-->
+<!--                <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Bir Marka Seçiniz" formControlName="brand" (change)="brandChanged(brandId)">-->
+<!--                  <nz-option *ngFor="let brand of listOfBrand" [nzLabel]="brand.name" [nzValue]="brand.id"></nz-option>-->
+<!--                </nz-select>-->
+<!--              </nz-form-control>-->
+<!--            </nz-form-item>-->
 
-                  </nz-option>
+<!--            <nz-form-item>-->
+<!--              <nz-form-label nzFor="model" style="color: #f0f0f0;">Model</nz-form-label>-->
+<!--              <nz-form-control nzErrorTip="This Input Is Required!">-->
+<!--                <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Bir Model Seçiniz" formControlName="model">-->
+<!--                  <nz-option *ngFor="let model of listOfModel" [nzLabel]="model.name" [nzValue]="model.id"></nz-option>-->
+<!--                </nz-select>-->
+<!--              </nz-form-control>-->
+<!--            </nz-form-item>-->
+
+            <nz-form-item>
+              <nz-form-label nzFor="type" style="color: #f0f0f0;">Yakıt Tipi</nz-form-label>
+              <nz-form-control nzErrorTip="This Input Is Required!">
+                <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Bir Yakıt Tipi Seçiniz" formControlName="type">
+                  <nz-option *ngFor="let type of listOfTypes" [nzLabel]="type" [nzValue]="type"></nz-option>
                 </nz-select>
               </nz-form-control>
             </nz-form-item>
 
             <nz-form-item>
-              <nz-form-label nzFor="gender">Model</nz-form-label>
+              <nz-form-label nzFor="color" style="color: #f0f0f0;">Renk</nz-form-label>
               <nz-form-control nzErrorTip="This Input Is Required!">
-                <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a Model" formControlName="model">
-                  <nz-option *ngFor="let model of listOfModel" [nzLabel]="model.name" [nzValue]="model.id">>
-
-                  </nz-option>
+                <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Bir Renk Seçiniz" formControlName="color">
+                  <nz-option *ngFor="let color of listOfColor" [nzLabel]="color" [nzValue]="color"></nz-option>
                 </nz-select>
               </nz-form-control>
             </nz-form-item>
 
             <nz-form-item>
-              <nz-form-label nzFor="studentClass">Type</nz-form-label>
+              <nz-form-label nzFor="transmission" style="color: #f0f0f0;">Vites Tipi</nz-form-label>
               <nz-form-control nzErrorTip="This Input Is Required!">
-                <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a Type" formControlName="type"> <nz-option
-                  *ngFor="let type of listOfTypes" nzLabel={{type}}
-                  nzValue={{type}}></nz-option>
-                </nz-select> </nz-form-control>
-            </nz-form-item>
-
-
-            <nz-form-item>
-              <nz-form-label nzFor="gender">Color</nz-form-label>
-              <nz-form-control nzErrorTip="This Input Is Required!">
-                <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a Color" formControlName="color"> <nz-option
-                  *ngFor="let color of listOfColor" nzLabel={{color}}
-                  nzValue={{color}}></nz-option>
+                <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Bir Vites Tipi Seçiniz" formControlName="transmission">
+                  <nz-option *ngFor="let transmission of listOfTransmission" [nzLabel]="transmission" [nzValue]="transmission"></nz-option>
                 </nz-select>
               </nz-form-control>
             </nz-form-item>
 
-
-            <nz-form-item>
-              <nz-form-label nzFor="studentClass">Transmission</nz-form-label>
-              <nz-form-control nzErrorTip="This Input Is Required!">
-                <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a Transmission" formControlName="transmission"> <nz-option
-                  *ngFor="let transmission of listOfTransmission" nzLabel={{transmission}}
-                  nzValue={{transmission}}></nz-option>
-                </nz-select>
-              </nz-form-control>
-            </nz-form-item>
-         </div>
+          </div>
           <div class="filter-select-dropdown filter-fields-width">
               <button class="filterBtn" nz-button nzType="primary" (click)="searchCar()">Araç Ara</button>
           </div>
       </div>
     </div>
     </nz-spin>
+</div>
+<div style="padding-top: 10px">
+  <nz-row [nzGutter]="16">
+    <nz-col *ngFor="let car of cars" nzSpan="8" style="margin-bottom: 16px;">
+      <nz-card nzHoverable class="custom-card">
+        <nz-row>
+          <nz-col nzSpan="24" style="text-align: center;">
+            <img class="profile" [src]="car.processedImg" alt="profile"/>
+          </nz-col>
+          <nz-col nzSpan="24">
+            <h3 style="cursor: pointer; color: #108ee9;" routerLink="/admin/{{car.id}}/cars">
+              {{car.name}}
+            </h3>
+            <hr>
+            <h6>Model Yılı: <b>{{car.modelYear}}</b></h6>
+            <h6>Renk: <b>{{car.color}}</b></h6>
+            <h6>Yakıt Tipi: <b>{{car.type}}</b></h6>
+            <hr>
+            <h6>Fiyat: <b>{{car.dailyPrice}}</b> TL</h6>
+          </nz-col>
+        </nz-row>
+      </nz-card>
+    </nz-col>
+  </nz-row>
 </div>

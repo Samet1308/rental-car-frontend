@@ -44,8 +44,8 @@ export class AdminServiceService {
         headers:this.createAuthorizationHeader()
       })
   }
-  getAllModels(): Observable<Model[]> {
-    return  this.httpClient.get<Model[]>(BASIC_URL+"/api/inventory/models",
+  getAllModels(): Observable<any> {
+    return  this.httpClient.get<[]>(BASIC_URL+"/api/inventory/models",
       {
         headers:this.createAuthorizationHeader()
       })
@@ -58,7 +58,7 @@ export class AdminServiceService {
   }
 
   getModelsByBrand(branId:number): Observable<any> {
-    return  this.httpClient.get<[Model[]]>(BASIC_URL+`/api/inventory/${branId}/models`,
+    return  this.httpClient.get<[]>(BASIC_URL+`/api/inventory/${branId}/models`,
       {
         headers:this.createAuthorizationHeader()
       })
@@ -73,6 +73,12 @@ export class AdminServiceService {
 
   postCar(modelId:number, carDto:any): Observable<any>{
     return this.httpClient.post<[]>(BASIC_URL + `/api/inventory/${modelId}/car`, carDto,
+      {
+        headers:this.createAuthorizationHeader()
+      })
+  }
+  searchCar(searchCarDto:any): Observable<any>{
+    return this.httpClient.post(BASIC_URL + "/api/inventory/car/search", searchCarDto,
       {
         headers:this.createAuthorizationHeader()
       })

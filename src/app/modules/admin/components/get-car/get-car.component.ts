@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {NzButtonModule, NzButtonSize} from "ng-zorro-antd/button";
 import {AdminServiceService} from "../../services/admin-service.service";
-import {ActivatedRoute, Router, RouterLink} from "@angular/router";
+import {ActivatedRoute, Router, RouterLink, RouterLinkActive} from "@angular/router";
 import {NzMessageService} from "ng-zorro-antd/message";
 import {NzFormModule} from "ng-zorro-antd/form";
 import {NgForOf} from "@angular/common";
@@ -19,7 +19,8 @@ import {NzCardModule} from "ng-zorro-antd/card";
     RouterLink,
     NgForOf,
     NzInputModule,
-    NzCardModule
+    NzCardModule,
+    RouterLinkActive
   ],
   templateUrl: './get-car.component.html',
   styleUrls: ['./get-car.component.css']
@@ -83,7 +84,7 @@ export class GetCarComponent {
         this.getCarsByModel()
         this.message
           .success(
-            `Ürün Başarıyla Silindi.`, {nzDuration: 5000}
+            `Araç Başarıyla Silindi.`, {nzDuration: 5000}
           );
       } else {
         this.message.error(

@@ -1,28 +1,137 @@
-.custom-navbar{
+
+.custom-navbar {
   background-color: #003973;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%; /* Ensures full width */
   box-sizing: border-box;
-
-  .navbar-title{
-    >a{
-      color: white !important;
-      margin-left: 100px;
-      font-size: 20px;
-      font-weight: bolder;
-      text-decoration: none;
-    }
-
-  }
-  .nav-links{
-    display: flex;
-    align-items: center;
-    margin-right: 100px;
-    a{
-      color: white;
-      margin-left: 35px;
-    }
-  }
 }
+
+.custom-navbar .navbar-title > a {
+  color: white !important;
+  margin-left: 100px;
+  font-size: 20px;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+.custom-navbar .nav-links {
+  display: flex;
+  align-items: center;
+  margin-right: 100px;
+}
+
+.custom-navbar .nav-links a {
+  color: white;
+  margin-left: 35px;
+  position: relative;
+  padding: 5px 10px; /* Adds padding for better spacing */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.custom-navbar .nav-links a:hover {
+  color: white; /* Ensures the text color remains white on hover */
+  border: 2px solid white; /* Adds a border on hover */
+  border-radius: 5px; /* Rounds the corners of the border */
+}
+
+.sidebar {
+  background-color: #003973; /* Blue background color */
+  color: white; /* Text color */
+  padding: 20px;
+  border-radius: 5px;
+  min-height: 91vh; /* Ensures sidebar is the same height as the right content */
+  text-align:center;
+}
+
+.sidebar .logo img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-menu li {
+  margin-bottom: 15px;
+}
+
+.sidebar-menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.sidebar-menu li a:hover {
+  text-decoration: underline;
+}
+
+.custom-card {
+  min-height: 400px; /* Set the desired minimum height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Adjusts content spacing within the card */
+}
+
+.profile {
+  height: 130px;
+  width: 200px;
+  border-radius: 10px;
+}
+
+h6 {
+  font-size: 14px;
+}
+
+.pagination {
+  width: 780px;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 20px;
+  margin-top: 20px;
+}
+.sidebar {
+  background-color: #003973; /* Sidebar arka plan rengi */
+  height: 100vh; /* Tam yükseklik */
+  padding: 20px; /* İçerik için padding */
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1); /* Hafif gölge */
+  border-top-right-radius: 10px; /* Üst sağ köşe yuvarlatma */
+  border-bottom-right-radius: 10px; /* Alt sağ köşe yuvarlatma */
+}
+
+.sidebar-menu a {
+  opacity: 1;
+  display: block;
+  color: white;
+  margin: 15px 0; /* Üst ve alt margin */
+  padding: 10px; /* İçerik padding */
+  text-decoration: none; /* Alt çizgi kaldırma */
+  transition: all 0.3s ease; /* Hover efekti için geçiş */
+  border-radius: 5px; /* Köşe yuvarlatma */
+}
+
+.sidebar-menu a:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Hover arka plan rengi */
+  border: 2px solid white; /* Hover kenarlık rengi */
+  color: white; /* Hover yazı rengi */
+}
+
+.sidebar-menu .icon {
+  width: 20px; /* İkon genişliği */
+  height: 20px; /* İkon yüksekliği */
+  margin-right: 10px; /* İkon ile metin arasındaki boşluk */
+}
+.background-container {
+  background-color: rgba(255, 255, 255, 0.5); /* Daha saydam bir arka plan rengi için opaklığı azaltın */
+  background-image: url('https://cdn.wallpapersafari.com/54/68/FPXhmi.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 91vh;
+  position: relative;
+}
+

@@ -118,6 +118,34 @@ h6 {
   padding-bottom: 20px;
   margin-top: 20px;
 }
+.sidebar {
+  background-color: #003973; /* Sidebar arka plan rengi */
+  height: 100vh; /* Tam yükseklik */
+  padding: 20px; /* İçerik için padding */
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1); /* Hafif gölge */
+  border-top-right-radius: 10px; /* Üst sağ köşe yuvarlatma */
+  border-bottom-right-radius: 10px; /* Alt sağ köşe yuvarlatma */
+}
 
+.sidebar-menu a {
+  display: block;
+  color: white;
+  margin: 15px 0; /* Üst ve alt margin */
+  padding: 10px; /* İçerik padding */
+  text-decoration: none; /* Alt çizgi kaldırma */
+  transition: all 0.3s ease; /* Hover efekti için geçiş */
+  border-radius: 5px; /* Köşe yuvarlatma */
+}
+
+.sidebar-menu a:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Hover arka plan rengi */
+  color: white; /* Hover yazı rengi */
+}
+
+.sidebar-menu .icon {
+  width: 20px; /* İkon genişliği */
+  height: 20px; /* İkon yüksekliği */
+  margin-right: 10px; /* İkon ile metin arasındaki boşluk */
+}
 
 

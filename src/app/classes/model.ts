@@ -3,4 +3,6 @@ export interface Model {
   name: string;
   brandId: number;
   brandName: string;
+  processedImg: string
+  returnedImage: string
 }

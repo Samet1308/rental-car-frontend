@@ -4,17 +4,17 @@
 </form>
 
 
-<div style="background-color:#F8F8F8; min-height: 91vh;">
+<div style="min-height: 91vh;">
   <div style="padding-top: 10px">
-    <div style="margin-top:10px; background-color:#D1C1FF"  class="child" *ngFor="let car of cars">
+    <div style="margin-top:10px;"  class="child" *ngFor="let car of cars">
       <div nz-row>
         <div nz-col nzSpan="8">
           <img class="profile" style="height: 130px; width: 200px; border-radius: 10px;"
                [src]="car.processedImg" alt="profile"/>
         </div>
         <div nz-col nzSpan="16">
-          <h2 style="cursor:pointer; color:#108ee9" routerLink="/customer/{{car.id}}/cars">
-            {{car.modelName}}</h2>
+          <h3 style="cursor:pointer; color:#108ee9" routerLink="/customer/{{car.id}}/cars">
+            {{car.modelName}}-{{car.name}}</h3>
           <hr>
           <h6>Model Yılı: <b>{{car.modelYear}}</b>
             Renk: <b>{{car.color}}</b>

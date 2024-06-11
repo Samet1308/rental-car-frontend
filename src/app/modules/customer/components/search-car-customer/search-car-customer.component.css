@@ -3,6 +3,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh; /* Viewport height to center vertically */
+  background-color: #f8f8f8; /* Light background color */
 }
 
 .dashboard-filter {

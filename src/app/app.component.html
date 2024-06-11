@@ -1,44 +1,93 @@
+<div class="background-container">
+  <div *ngIf="!isAdminLoggedIn && !isCustomerLoggedIn">
+    <nz-header class="main-header" nz-row nzType="flex" class="custom-navbar">
+      <div class="navbar-title">
+        <a routerLink="/login">Kayra Car Rental</a>
+      </div>
+      <div class="nav-links">
+        <a nz-button nzType="link" routerLink="/register" routerLinkActive="active">Kaydol</a>
+        <a nz-button nzType="link" routerLink="/login" routerLinkActive="active">Giriş Yap</a>
+      </div>
+    </nz-header>
+    <router-outlet></router-outlet>
+  </div>
 
-<div *ngIf ="!isAdminLoggedIn && !isCustomerLoggedIn">
-  <nz-header class="main-header" nz-row nzType="flex" class="custom-navbar">
-    <div class="navbar-title">
-      <a routerLink="/login">Kayra Car Rental </a>
+  <div *ngIf="isAdminLoggedIn">
+    <nz-header class="main-header" nz-row nzType="flex" class="custom-navbar">
+      <div class="navbar-title">
+        <a routerLink="/admin/dashboard">Kayra Car Rental</a>
+      </div>
+      <div class="nav-links">
+        <a nz-button nzType="link" (click)="logout()" routerLinkActive="active">Çıkış Yap</a>
+      </div>
+    </nz-header>
+
+    <div class="row" style="margin-top: 10px;">
+      <div class="col-md-2 sidebar">
+        <div class="sidebar-menu">
+          <a routerLink="/admin/dashboard">
+            <img src="https://banner2.cleanpng.com/20180420/vlq/kisspng-font-awesome-computer-icons-font-housing-logo-5ada418c752ba8.1327093815242530684799.jpg" alt="Dashboard Icon" class="icon">Anasayfa
+          </a>
+          <hr>
+          <a routerLink="/admin/add-brand">
+            <img src="https://w7.pngwing.com/pngs/535/334/png-transparent-computer-icons-add-button-logo-number-add-button-thumbnail.png" alt="Add Brand Icon" class="icon">Marka Ekle
+          </a>
+          <hr>
+          <a routerLink="/admin/search" routerLinkActive="active">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdZBkybeMVHCbk0TDBt3waWbHjDpHa_ywxuA&s" alt="Find Car Icon" class="icon">Araç Bul
+          </a>
+          <hr>
+          <a routerLink="/admin/bookings" routerLinkActive="active">
+            <img src="https://w7.pngwing.com/pngs/383/526/png-transparent-used-car-vehicle-leasing-car-finance-lease-floyd-mayweather-truck-car-loan-thumbnail.png" alt="Rentals Icon" class="icon">Kiralamalar
+          </a>
+          <hr>
+          <a routerLinkActive="active">
+            <img src="https://w7.pngwing.com/pngs/686/143/png-transparent-exit-logout-sign-out-user-interface-icon-thumbnail.png" alt="Logout Icon" class="icon">Çıkış Yap
+          </a>
+        </div>
+      </div>
+      <div class="col-md-10 content">
+        <router-outlet></router-outlet>
+      </div>
     </div>
-    <div class="nav-links">
-      <a nz-button nzType="link" routerLink="/register" routerLinkActive="active">Kaydol </a>
-      <a nz-button nzType="link" routerLink="/login" routerLinkActive="active">Giriş Yap </a>
+  </div>
+
+  <div *ngIf="isCustomerLoggedIn">
+    <nz-header class="main-header" nz-row nzType="flex" class="custom-navbar">
+      <div class="navbar-title">
+        <a routerLink="/admin/dashboard">Kayra Car Rental</a>
+      </div>
+      <div class="nav-links">
+        <a nz-button nzType="link" routerLink="/customer/dashboard" routerLinkActive="active">Ana Sayfa</a>
+        <a nz-button nzType="link" routerLink="/customer/get-bookings" routerLinkActive="active">Araçlarım</a>
+        <a nz-button nzType="link" (click)="logout()" routerLinkActive="active">Çıkış Yap</a>
+      </div>
+    </nz-header>
+    <div class="row" style="margin-top: 10px;">
+      <div class="col-md-2 sidebar">
+        <div class="sidebar-menu">
+          <a routerLink="/customer/dashboard">
+            <img src="https://banner2.cleanpng.com/20180420/vlq/kisspng-font-awesome-computer-icons-font-housing-logo-5ada418c752ba8.1327093815242530684799.jpg" alt="Dashboard Icon" class="icon">Anasayfa
+          </a>
+          <hr>
+          <a routerLink="/customer/search-car" routerLinkActive="active">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdZBkybeMVHCbk0TDBt3waWbHjDpHa_ywxuA&s" alt="Find Car Icon" class="icon">Araç Bul
+          </a>
+          <hr>
+          <a routerLink="/customer/get-bookings" routerLinkActive="active">
+            <img src="https://w7.pngwing.com/pngs/383/526/png-transparent-used-car-vehicle-leasing-car-finance-lease-floyd-mayweather-truck-car-loan-thumbnail.png" alt="Rentals Icon" class="icon">Araçlarım
+          </a>
+          <hr>
+          <a (click)="logout()" routerLink="/login" routerLinkActive="active">
+            <img src="https://w7.pngwing.com/pngs/686/143/png-transparent-exit-logout-sign-out-user-interface-icon-thumbnail.png" alt="Logout Icon" class="icon">Çıkış Yap
+          </a>
+        </div>
+      </div>
+      <div class="col-md-10 content">
+        <router-outlet></router-outlet>
+      </div>
     </div>
-  </nz-header>
+  </div>
+
 </div>
-
-<div *ngIf ="isAdminLoggedIn">
-  <nz-header class="main-header" nz-row nzType="flex" class="custom-navbar">
-    <div class="navbar-title">
-      <a routerLink="/login">Kayra Car Rental</a>
-    </div>
-    <div class="nav-links">
-      <a nz-button nzType="link" routerLink="/admin/dashboard" routerLinkActive="active">Ana Sayfa</a>
-      <a nz-button nzType="link" routerLink="/admin/add-brand" routerLinkActive="active">Marka Ekle</a>
-      <a nz-button nzType="link" routerLink="/admin/search" routerLinkActive="active">Araç Bul</a>
-      <a nz-button nzType="link" routerLink="/admin/bookings" routerLinkActive="active">Kiralamalar</a>
-      <a nz-button nzType="link" (click)="logout()" routerLinkActive="active">Logout </a>
-    </div>
-  </nz-header>
-</div>
-
-<div *ngIf ="isCustomerLoggedIn">
-  <nz-header class="main-header" nz-row nzType="flex" class="custom-navbar">
-    <div class="navbar-title">
-      <a routerLink="/login">Kayra Car Rental</a>
-    </div>
-    <div class="nav-links">
-      <a nz-button nzType="link" routerLink="/customer/dashboard" routerLinkActive="active">Ana Sayfa</a>
-      <a nz-button nzType="link" routerLink="/customer/bookings" routerLinkActive="active">Araçlarım  </a>
-      <a nz-button nzType="link" (click)="logout()"  routerLinkActive="active">Çıkış Yap </a>
-    </div>
-  </nz-header>
-</div>
-<router-outlet></router-outlet>
-
-
 

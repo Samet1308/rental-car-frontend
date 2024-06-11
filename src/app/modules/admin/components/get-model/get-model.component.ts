@@ -80,7 +80,7 @@ export class GetModelComponent {
         this.getModelsByBrand()
         this.message
           .success(
-            `Ürün Başarıyla Silindi.`, {nzDuration: 5000}
+            `Model Başarıyla Silindi.`, {nzDuration: 5000}
           );
       } else {
         this.message.error(

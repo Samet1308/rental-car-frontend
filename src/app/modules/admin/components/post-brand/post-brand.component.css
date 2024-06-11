@@ -1,6 +1,6 @@
 .parent{
   width:100%;
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,6 +45,6 @@
 }
 
 .login-form-button{
-  margin-top: 40px;
+  margin-top: 20px;
   width: 100%;
 }
